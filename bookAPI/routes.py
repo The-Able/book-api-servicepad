@@ -196,7 +196,7 @@ def updateDp():
         if data.get('image') is not None:
             image = data.get('image')
             filepath = image.filename
-            image.save(f"/static/uploads/images/{filepath}")
+            image.save(f"{app.root_path}/static/uploads/images/{filepath}")
             user.image= filepath
             db.session.commit()
             return jsonify({'status':200, "message":"changes done!!"})
